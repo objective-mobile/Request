@@ -31,8 +31,8 @@ object HttpClient {
             install(Auth){
                 bearer {
                     loadTokens {
-                        BearerTokens("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",
-                            "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")
+                        BearerTokens("",
+                            "")
                     }
                 }
             }
