@@ -16,7 +16,7 @@ ktor = "2.3.9"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-androidx-lifecycle-viewmodel = {module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle"}
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -26,15 +26,16 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 koin-core = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
 ktor-content-negotiotion = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-content-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
-ktor-content-gson = { module = "io.ktor:ktor-serialization-gson", version.ref = "ktor"}
+ktor-content-gson = { module = "io.ktor:ktor-serialization-gson", version.ref = "ktor" }
 ktor-resources = { module = "io.ktor:ktor-client-resources", version.ref = "ktor" }
 ktor-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
 ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
-ktor-cio = {module = "io.ktor:ktor-client-cio", version.ref = "ktor"}
+ktor-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
 
 
 [plugins]
