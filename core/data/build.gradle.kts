@@ -1,25 +1,24 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    kotlin("plugin.serialization") version libs.versions.kotlin
 }
 
 android {
-    namespace = "com.empty.openai.data"
+    namespace = "com.empty.core.data"
     compileSdk = 34
 
     defaultConfig {
         minSdk = 21
-        targetSdk = 34
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -33,7 +32,6 @@ android {
 }
 
 dependencies {
-    testImplementation(libs.junit)
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.okhttp)
     implementation(libs.ktor.content.negotiotion)
@@ -43,6 +41,6 @@ dependencies {
     implementation(libs.ktor.auth)
     implementation(libs.ktor.logging)
     implementation(libs.ktor.cio)
-    implementation(project(":openai:domain"))
-    implementation(project(":core:data"))
+    implementation(libs.material)
+    testImplementation(libs.junit)
 }

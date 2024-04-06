@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import com.empty.answer.presentation.AnswerFragment
 import com.empty.request.databinding.ActivityMainBinding
-import com.empty.request.presentation.RequestFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -13,9 +13,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         supportFragmentManager.commit {
-            replace<RequestFragment>(R.id.fragment_container)
+            replace<AnswerFragment>(R.id.fragment_container)
             setReorderingAllowed(true)
-            addToBackStack(RequestFragment::class.simpleName)
+            addToBackStack(AnswerFragment::class.simpleName)
         }
         setContentView(binding.root)
     }

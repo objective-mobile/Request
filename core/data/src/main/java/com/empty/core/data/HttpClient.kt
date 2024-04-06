@@ -1,4 +1,4 @@
-package com.empty.openai.data
+package com.empty.core.data
 
 import android.util.Log
 import io.ktor.client.HttpClient
@@ -18,13 +18,15 @@ interface CoreHttpClient {
     fun httpClient(): HttpClient
 }
 
-class BaseHttpClient : CoreHttpClient {
+class BaseHttpClient(
+    private val defaultUrl: String, private val token: String
+) : CoreHttpClient {
 
     private val httpClient: HttpClient by lazy {
         HttpClient {
             expectSuccess = true
             defaultRequest {
-                url("https://api.openai.com/v1/chat/completions")
+                url(defaultUrl)
                 contentType(ContentType.Application.Json)
             }
             install(Logging) {
@@ -39,8 +41,7 @@ class BaseHttpClient : CoreHttpClient {
                 bearer {
                     loadTokens {
                         BearerTokens(
-                            BuildConfig.OPENAI_TOKEN,
-                            BuildConfig.OPENAI_TOKEN
+                            token, token
                         )
                     }
                 }

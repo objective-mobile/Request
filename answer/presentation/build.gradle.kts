@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.empty.request.presentation"
+    namespace = "com.empty.answer.presentation"
     compileSdk = 34
 
     defaultConfig {

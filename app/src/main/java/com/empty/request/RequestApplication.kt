@@ -1,8 +1,8 @@
 package com.empty.request
 
 import android.app.Application
+import com.empty.answer.presentation.requestModule
 import com.empty.openai.di.openAiModule
-import com.empty.request.presentation.requestModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

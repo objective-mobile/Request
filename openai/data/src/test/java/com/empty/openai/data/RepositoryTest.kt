@@ -1,8 +1,8 @@
 package com.empty.openai.data
 
+import com.empty.core.data.BaseHttpClient
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -12,7 +12,7 @@ import org.junit.Assert.*
 class RepositoryTest {
     @Test
     fun requestTest(){
-        val repository = BaseAiRepository(HttpClient.httpClient())
+        val repository = BaseAiRepository(BaseHttpClient("", ""))
         runBlocking {
             repository.requestAi("What the capital of London?")
         }

@@ -1,5 +1,6 @@
 package com.empty.openai.data
 
+import com.empty.core.data.CoreHttpClient
 import com.empty.openai.AiModel
 import com.empty.openai.AiRepository
 import com.empty.openai.data.model.request.AiMessageRequest

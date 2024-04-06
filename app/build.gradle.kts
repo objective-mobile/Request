@@ -44,7 +44,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(project(":request:presentation"))
+    implementation(project(":answer:presentation"))
     implementation(project(":openai:di"))
     implementation(libs.koin.android)
     testImplementation(libs.junit)
