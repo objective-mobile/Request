@@ -4,5 +4,5 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val requestModule = module {
-    viewModel { AnswerViewModel(get()) }
+    viewModel { BaseAnswerViewModel(get(), get()) }
 }
