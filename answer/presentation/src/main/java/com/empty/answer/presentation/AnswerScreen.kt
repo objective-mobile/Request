@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalGlideComposeApi::class)
+
 package com.empty.answer.presentation
 
 import androidx.compose.foundation.layout.Column
@@ -5,12 +7,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.TextField
-import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -21,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -45,17 +45,8 @@ fun AnswerUi(viewModel: AnswerViewModel) {
                 }
             }
             Spacer(modifier = Modifier.size(8.dp))
-            Text(text = answer)
-            LazyColumn {
-                items(answerSearch) {
-                    Card(
-                        Modifier
-                            .fillParentMaxWidth()
-                            .padding(8.dp, 4.dp)) {
-                        Text(text = it)
-                    }
-                }
-            }
+            answer.Show()
+            answerSearch.Show()
         }
     }
 }
@@ -64,10 +55,10 @@ fun AnswerUi(viewModel: AnswerViewModel) {
 @Composable
 fun PreviewAnswerUi() {
     AnswerUi(viewModel = object : AnswerViewModel {
-        override val answer: StateFlow<String>
-            get() = MutableStateFlow("Test answer")
-        override val searchAnswer: StateFlow<List<String>>
-            get() = MutableStateFlow(listOf())
+        override val answer: StateFlow<AiAnswerUiModel>
+            get() = MutableStateFlow(AiAnswerUiModel(""))
+        override val searchAnswer: StateFlow<SearchResultUiModel>
+            get() = MutableStateFlow(SearchResultUiModel(listOf()))
 
         override fun request(question: String) {
         }
